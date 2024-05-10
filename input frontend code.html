@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Specification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/carbg.jpg'); /* Replace 'bcg.png' with your image file */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 6px; /* Reduced padding */
+            font-size: 14px; /* Reduced font size */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px; /* Reduced font size */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vehicle Specification</h1>
+        <form action="/newpage" method="POST"> <!-- Replace "process_form.php" with the URL of the processing page -->
+            <div class="form-group">
+                <label for="make">Company Name:</label>
+                <input type="text" id="make" name="make">
+            </div><br>
+            <div class="form-group">
+                <label for="model">Model Name:</label>
+                <input type="text" id="model" name="model">
+            </div><br>
+            <div class="form-group">
+                <label for="vehicle-class">Vehicle Class:</label>
+                <input type="text" id="vehicle-class" name="vehicle-class">
+            </div><br>
+            <div class="form-group">
+                <label for="engine-size">Engine Size (L):</label>
+                <input type="number" step="0.01" id="engine-size" name="engine-size">
+            </div><br>
+            <div class="form-group">
+                <label for="cylinders">Cylinders:</label>
+                <input type="number" id="cylinders" name="cylinders">
+            </div><br>
+            <div class="form-group">
+                <label for="transmission">Transmission:</label>
+                <select id="transmission" name="transmission">
+                    <option value="Automatic">Automatic</option>
+                    <option value="Automatic Selection">Automatic Selection</option>
+                    <option value="Autonomous">Autonomous</option>
+                    <option value="Manual">Manual</option>
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="fuel-type">Fuel Type:</label>
+                <select id="fuel-type" name="fuel-type">
+                    <option value="X">Regular Gasoline</option>
+                    <option value="Z">Premium Gasoline</option>
+                    <option value="E">Ethanol</option>
+                    <option value="D">Diesel</option>
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="fuel-consumption-city">Fuel Consumption in City (L/100 km):</label>
+                <input type="number" step="0.01" id="fuel-consumption-city" name="fuel_consumption_city">
+            </div><br>
+            <div class="form-group">
+                <label for="fuel-consumption-hwy">Fuel Consumption on Highway (L/100 km):</label>
+                <input type="number" step="0.01" id="fuel-consumption-hwy" name="fuel_consumption_hwy">
+            </div><br>
+            <div class="form-group">
+                <label for="fuel-consumption-comb">Average Fuel Consumption On Highway & City (L/100 km):</label>
+                <input type="number" step="0.01" id="fuel-consumption-comb" name="fuel_consumption_comb">
+            </div><br>
+            <div class="form-group">
+                <label for="fuel-consumption-mpg">Fuel Consumption Rate (mpg):</label>
+                <input type="number" id="fuel-consumption-mpg" name="fuel_consumption_mpg">
+            </div><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
