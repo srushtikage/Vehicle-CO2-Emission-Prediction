@@ -70,7 +70,7 @@ provide insights into the factors influencing emissions.
 
 **Backend:** Flask, Python, Machine Learning
 
-## Key Features
+## Features
 
 1. **Low Emission Vehicle (LEV):**
 On taking details of vehicle like no. of cylinders, vehicle size, model name, fuel type and fuel consumption rate, the prediction wheather a vehicle is LEV or not is made.
