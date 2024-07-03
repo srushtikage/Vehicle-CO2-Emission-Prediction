@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Algorithms</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/pollution.jpg'); /* Replace 'background.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            color: #0a0b0b;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .article-box {
+            background-color: rgb(227, 204, 174);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            margin-top: 0;
+            color: black;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .values {
+            display: none;
+        }
+
+        .good {
+            color: green;
+        }
+
+        .bad {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vehicle CO2 Emission Evaluation</h1>
+        <div class="article-box">
+            {% if predicted['Random Forest'] > 150 %}
+                <h2 class="bad">The vehicle is considered BAD in terms of CO2 emission.</h2>
+            {% else %}
+                <h2 class="good">The vehicle is considered GOOD in terms of CO2 emission.</h2>
+            {% endif %}
+        </div>
+    </div>
+    
+    <br><br><br>
+    <div class="container">
+        <h1>Machine Learning Algorithms for Prediction</h1>
+        <div class="grid-container">
+            <div class="article-box" onclick="toggleValues('multiple')">
+                <h2>Multiple Regression</h2>
+                <div class="values" id="multiple-values">
+                    <h3>Predicted CO2 Emission: {{ predicted['Multiple Regression']|round(2) }}</h3>
+                    <h3>Accuracy: {{ accuracy['Multiple Regression'] }}</h3>
+                </div>
+            </div>
+            <div class="article-box" onclick="toggleValues('lasso')">
+                <h2>Lasso Regression</h2>
+                <div class="values" id="lasso-values">
+                    <h3>Predicted CO2 Emission: {{ predicted['Lasso Regression']|round(2) }}</h3>
+                    <h3>Accuracy: {{ accuracy['Lasso Regression'] }}</h3>
+                </div>
+            </div>
+            <!-- Add similar divs for other algorithms -->
+            <div class="article-box" onclick="toggleValues('ridge')">
+                <h2>Ridge Regression</h2>
+                <div class="values" id="ridge-values">
+                    <h3>Predicted CO2 Emission: {{ predicted['Ridge Regression']|round(2) }}</h3>
+                    <h3>Accuracy: {{ accuracy['Ridge Regression'] }}</h3>
+                </div>
+            </div>
+            <div class="article-box" onclick="toggleValues('decision')">
+                <h2>Decision Tree</h2>
+                <div class="values" id="decision-values">
+                    <h3>Predicted CO2 Emission: {{ predicted['Decision Tree']|round(2) }}</h3>
+                    <h3>Accuracy: {{ accuracy['Decision Tree'] }}</h3>
+                </div>
+            </div>
+            <div class="article-box" onclick="toggleValues('random')">
+                <h2>Random Forest</h2>
+                <div class="values" id="random-values">
+                    <h3>Predicted CO2 Emission: {{ predicted['Random Forest']|round(2) }}</h3>
+                    <h3>Accuracy: {{ accuracy['Random Forest'] }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleValues(algo) {
+            var values = document.getElementById(algo + '-values');
+            if (values.style.display === "none") {
+                values.style.display = "block";
+            } else {
+                values.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
