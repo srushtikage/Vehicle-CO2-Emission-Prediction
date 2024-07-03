@@ -16,7 +16,7 @@ effective measures to reduce environmental impact.
 ## Table of Contents
 
 - [Installation](#installation)
-- [Objectives](#objetives)
+- [Objectives](#objectives)
 - [Approach](#approach)
 - [Tech Stacks](#tech-stacks)
 - [Features](#features)
