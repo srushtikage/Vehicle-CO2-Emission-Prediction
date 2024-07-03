@@ -21,6 +21,7 @@ effective measures to reduce environmental impact.
 - [Tech Stacks](#tech-stacks)
 - [Features](#features)
 - [Conclusion](#conclusion)
+- [Demo Video](#demo-video)
 ## Installation
 
 To install this project, follow these steps:
@@ -82,7 +83,7 @@ With a model accuracy of **97.63%** achieved by Random Forest Algorithm the pred
 
 Provide recommendations for policymakers, manufacturers, and
 consumers based on the model results, suggesting strategies for reducing emissions and promoting environmental sustainability in the transportation sector.
-## Demo
+## Demo Video
 
 [Click here to watch the demo video](https://drive.google.com/file/d/15yf12xcTHH6ZKLfzHkZnlWZzVHbmDh4D/view?usp=sharing)
 
